@@ -3,7 +3,7 @@ name: project-onboarding
 description: Get oriented in an unfamiliar or rarely-touched codebase quickly and leave behind a CLAUDE.md so the next session starts informed. Use when starting work in a project for the first time, when asked to "understand this repo", "how does this project work", "set up this project", "where do I start", or before making a non-trivial change in code you haven't read yet.
 metadata:
   status: seed
-  version: 0.1.0
+  version: 0.2.0
   last-reviewed: 2026-10-23
   owners: []
   tags: [dev, onboarding]
@@ -25,8 +25,12 @@ sessions will find it.
 1. **Read what exists:** `README*`, `CLAUDE.md`, `CONTRIBUTING*`, `docs/`,
    and the PR template. Existing project docs override this skill.
 2. **Identify the stack and entry points** from manifests (`package.json`,
-   `pyproject.toml`, `go.mod`, `Cargo.toml`, `pom.xml`, `Dockerfile`, …) and
-   the top-level directory layout.
+   `pyproject.toml`, `go.mod`, `pubspec.yaml`, `Dockerfile`, …) and the
+   top-level directory layout, then **load the matching stack skills**
+   (`python`, `django`, `typescript`, `nextjs`, `tailwind`, `golang`,
+   `postgres`, `shopify`, `aws`, `gcp`, `firebase`, `supabase`, `flutter`;
+   see `SKILLS.md`). They list the version checks and verify commands for
+   each stack.
 3. **Find the real commands** for install, build, test, lint, format and run.
    Prefer what CI actually runs (`.github/workflows/`, `Makefile`, scripts)
    over what the README claims; they drift.

@@ -23,6 +23,25 @@ Four meta-skills run the loop (details in
 Skills move `seed → draft → stable → deprecated`; each level has an explicit
 bar so "stable" means something.
 
+## Stack skills
+
+One skill per technology we use. Each one starts by detecting the project's
+versions (the project's conventions win), then gives defaults for new
+work, a verify loop of real commands, the rules that matter, and a dated
+**"Changed recently"** section backed by
+[`research/2026-10-23-stack-baseline.md`](research/2026-10-23-stack-baseline.md).
+
+| Area | Skills |
+|---|---|
+| Backend | `python`, `django`, `golang` |
+| Web | `typescript`, `nextjs`, `tailwind`, `shopify` |
+| Data | `postgres`, `supabase` |
+| Cloud | `aws`, `gcp`, `firebase` |
+| Mobile | `flutter` |
+
+Version facts go stale. `skill-gardener` flags skills not reviewed in 90
+days, and `skill-research` refreshes them from primary sources.
+
 ## Use the skills in a project
 
 **Claude Code (plugin marketplace)**, once per machine:
