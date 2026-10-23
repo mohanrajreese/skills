@@ -1,0 +1,10 @@
+{
+  "name": "dev-skills",
+  "version": "0.1.0",
+  "description": "Shared development skills for all our projects, plus meta-skills that research, learn and grow the library over time.",
+  "author": {
+    "name": "Mohanraj M"
+  },
+  "license": "MIT",
+  "skills": "./skills/"
+}
