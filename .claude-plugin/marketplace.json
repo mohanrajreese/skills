@@ -1,0 +1,16 @@
+{
+  "name": "mohanrajreese-skills",
+  "owner": {
+    "name": "Mohanraj M"
+  },
+  "metadata": {
+    "description": "Self-improving development skills library."
+  },
+  "plugins": [
+    {
+      "name": "dev-skills",
+      "source": "./",
+      "description": "Shared development skills for all our projects, plus meta-skills that research, learn and grow the library over time."
+    }
+  ]
+}

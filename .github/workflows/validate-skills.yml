@@ -1,0 +1,22 @@
+name: Validate skills
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Validate SKILL.md files
+        run: python3 scripts/skills.py validate
+      - name: Check SKILLS.md index is up to date
+        run: |
+          python3 scripts/skills.py index
+          git diff --exit-code SKILLS.md || { echo "SKILLS.md is stale: run 'python3 scripts/skills.py index' and commit"; exit 1; }
