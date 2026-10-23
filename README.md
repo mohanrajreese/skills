@@ -19,6 +19,9 @@ Four meta-skills run the loop (details in
 | [`skill-retro`](skills/skill-retro/SKILL.md) | **Self-learn**: log what worked and what didn't after real use | "Retro: what did we learn?" |
 | [`skill-research`](skills/skill-research/SKILL.md) | **Research**: check a topic against primary sources, cite them | "Research X and update our skill" |
 | [`skill-gardener`](skills/skill-gardener/SKILL.md) | **Grow**: promote learnings, re-rate status, merge, deprecate | "Review our skills" |
+| [`skill-evals`](skills/skill-evals/SKILL.md) | **Prove**: test that a skill fires when it should and beats no skill | "Test the razorpay skill" |
+| [`skill-router`](skills/skill-router/SKILL.md) | **Route**: pick the few skills a big task needs, in order | "Which skills should I use for this?" |
+| [`domain-learning`](skills/domain-learning/SKILL.md) | **Learn a domain**: glossary, workflows, regulators, rails → domain brief + skills | "Help us understand the logistics domain" |
 
 Skills move `seed → draft → stable → deprecated`; each level has an explicit
 bar so "stable" means something.
@@ -51,12 +54,17 @@ days, and `skill-research` refreshes them from primary sources.
 | Engineering | `design-principles` (KISS, YAGNI, DRY, SOLID, overengineering prevention), `coding-standards`, `code-quality` |
 | Integrations | `razorpay`, `whatsapp-integration`, `sso` |
 | Money | `pricing`, `subscription-billing` |
-| Security | `security` (OWASP Top 10:2025, OWASP GenAI LLM Top 10 2026, DPDP) |
+| Security & compliance | `security` (OWASP Top 10:2025, OWASP GenAI LLM Top 10 2026), `data-security`, `india-it-compliance` (IT Act, CERT-In, IT Rules 2026, DPDP) |
+| Fundamentals | `algorithms-complexity`, `data-structures`, `system-design` |
+| Marketing | `marketing` (India compliance included), `meta-marketing` (Pixel + CAPI, catalogs, Advantage+) |
 | AI | `ai-agents`, `agentic-coding`, `subagent-suggester` |
 
 [`docs/idea-to-ship.md`](docs/idea-to-ship.md) shows how they chain from an
 idea to a shipped feature. Evidence lives in
 [`research/2026-10-23-product-platform-baseline.md`](research/2026-10-23-product-platform-baseline.md).
+
+Every skill is explained in [`docs/skills-guide.md`](docs/skills-guide.md).
+Example skill tests live in [`evals/`](evals/) (run with `claude plugin eval .`; billed model runs).
 
 ## Use the skills in a project
 
@@ -96,6 +104,7 @@ skills/<name>/         one folder per skill
   scripts/             optional deterministic helpers
 templates/skill/       what `scripts/skills.py new` copies
 research/              sourced research notes behind skill guidance
+evals/                 skill tests in claude plugin eval format (see skill-evals)
 docs/                  library conventions
 BACKLOG.md             skill ideas not built yet
 SKILLS.md              generated index — don't edit by hand

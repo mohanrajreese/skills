@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: plugin-silent-on-unrelated-request
+expected_outcome: |
+  A short monsoon poem, produced without loading any development skill.

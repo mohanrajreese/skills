@@ -18,6 +18,7 @@ This repo is the shared dev-skills library. It is a Claude Code plugin
 python3 scripts/skills.py validate   # must pass before committing
 python3 scripts/skills.py index      # rerun after any frontmatter change; commit SKILLS.md
 python3 scripts/skills.py report
+claude plugin eval . --tag <skill> --no-publish   # skill tests in evals/ (billed model runs; ask first)
 ```
 
 ## Conventions

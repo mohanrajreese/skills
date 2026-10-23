@@ -51,6 +51,28 @@ run, maps the architecture, loads the matching stack skills, and writes a
 **Kicks in:** first session in a repo, "how does this project work".
 **You get:** a working dev loop and a `CLAUDE.md` for future sessions.
 
+### `skill-evals`
+Tests skills the way `claude plugin eval` runs them: should-fire and
+should-not-fire prompts, outcome graders, and a with-vs-without-skill
+comparison that shows whether a skill actually helps. Example suite in
+`evals/`.
+**Kicks in:** "test this skill", a skill misfires or never loads, evidence for promotion.
+**You get:** eval cases in `evals/<skill>-<case>/` and fixes to descriptions or bodies.
+
+### `skill-router`
+Picks the few skills a big task needs and the order to use them (decide →
+plan → build → secure → check → learn), and logs gaps to the backlog.
+**Kicks in:** start of large or cross-cutting work, "which skills should I use".
+**You get:** a short routing plan instead of loading everything.
+
+### `domain-learning`
+Learns a new business domain fast: glossary, entities, workflows,
+regulators, India rails (UPI, ONDC, Account Aggregator, GST e-invoicing),
+competitors, expert questions, and turns it into a domain brief and seed
+skills.
+**Kicks in:** a project in an unfamiliar industry, "understand this domain".
+**You get:** `docs/domains/<name>.md`, a research note, and new skills when the domain recurs.
+
 ---
 
 ## 2. Stack skills (one per technology)
@@ -223,6 +245,23 @@ SAST, headers, audit logs), India DPDP/GDPR duties, incident basics.
 **You get:** a security review with the risks that matter for this change.
 **Try:** "Security review this webhook handler."
 
+### `data-security`
+Protects the data itself across its lifecycle: classify it, avoid holding
+cards or Aadhaar, encrypt (TLS, KMS, field-level), hash passwords properly,
+remove standing production access, mask data for dev, redact logs, enforce
+retention and deletion, keep India residency, and respond to leaks.
+**You get:** a data map and controls proportional to how sensitive each field is.
+**Try:** "We're adding PAN and bank details to onboarding. How do we store them?"
+
+### `india-it-compliance`
+Indian tech law as engineering controls: IT Act sections (43A, 66C, 66D,
+72A, 79, 85) with the prevention for each, SPDI → DPDP (May 2027), CERT-In's
+6-hour reporting and 180-day logs in India, intermediary duties including
+the 2026 rules (3-hour takedowns, AI-content labelling), RBI payment rules,
+e-commerce rules and banned dark patterns. Not legal advice.
+**You get:** a per-release prevention checklist and incident timelines.
+**Try:** "Our app lets users post photos and generate AI images. What do we need for India?"
+
 ---
 
 ## 6. Integrations
@@ -285,3 +324,55 @@ Looks at a repo and its recurring work, then proposes a few subagents worth
 having (reviewer, test runner, migration reviewer, …) and writes their
 `.claude/agents/*.md` files with minimal tools and the right model.
 **Try:** "Which subagents should we create for this project?"
+
+---
+
+## 9. Fundamentals: algorithms, data structures, system design
+
+### `algorithms-complexity`
+Time and space complexity (Big-O, amortized, recursion depth), what input
+sizes each complexity can handle, hidden quadratic and N+1 traps, ReDoS, a
+catalogue of algorithm patterns by problem shape, streaming for memory, and
+profiling before optimising. Includes a per-language cheat sheet of built-in
+operation costs.
+**You get:** a faster, lighter fix backed by a measurement.
+**Try:** "This CSV export of 50k orders takes 40 seconds. Why, and how do we fix it?"
+
+### `data-structures`
+Choosing structures by the operations you need: arrays, maps, sets, deques,
+heaps, sorted maps, tries, graphs, ring buffers, LRU, bloom filters; each
+language's built-ins; Postgres index types (B-tree, GIN, GiST, BRIN,
+partial, covering); Redis types (sorted sets, streams, HyperLogLog).
+**You get:** the right structure or index for the access pattern.
+**Try:** "What's the best way to store a live leaderboard for 100k players?"
+
+### `system-design`
+Requirements with numbers, back-of-envelope estimates, API and data model,
+scaling options cheapest first, queues, idempotency and the outbox pattern,
+retries with backoff and jitter, circuit breakers, rate limits, SLOs, and
+building blocks mapped to AWS, GCP, Supabase and Firebase. Ends in a design
+doc (interview mode too).
+**You get:** a design doc with explicit trade-offs and a path to 10×.
+**Try:** "Design order notifications for 2,000 Shopify stores during a sale."
+
+---
+
+## 10. Marketing
+
+### `marketing`
+Positioning, ICP, picking 1–2 channels (WhatsApp, Meta, Google, SEO, Shopify
+App Store, partnerships), funnel metrics and CAC/LTV, tracking plans and UTM
+conventions, landing pages, experiments, and India marketing compliance
+(TRAI DLT and 140/1600 series, WhatsApp opt-in, DPDP consent, email sender
+rules, ASCI, dark patterns).
+**You get:** a campaign brief with measurement and a compliance check.
+**Try:** "Plan the launch campaign for our clinic billing app in Tamil Nadu."
+
+### `meta-marketing`
+Facebook, Instagram and WhatsApp ads engineering: business portfolio
+setup, Pixel + Conversions API with deduplication and hashed match keys,
+catalogs (Shopify's Meta app or feeds), Advantage+ after the legacy API
+retirement, pinned Marketing API versions (v26), Lead Ads and
+Click-to-WhatsApp flows, Instagram APIs, measurement and ad policy.
+**You get:** accurate, consented conversion data and integrations on supported APIs.
+**Try:** "Our Meta ROAS looks doubled. Check our Pixel and CAPI setup."
