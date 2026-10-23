@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: razorpay-webhook-verification
+expected_outcome: |
+  A webhook-based design that verifies Razorpay's signature over the raw body
+  with the webhook secret, dedupes repeated events, checks amount and order,
+  and processes idempotently.

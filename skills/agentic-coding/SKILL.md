@@ -3,7 +3,7 @@ name: agentic-coding
 description: How we work with AI coding agents such as Claude Code (also Copilot, Cursor and Codex) across our repos, covering CLAUDE.md and AGENTS.md, this skills library as a plugin, plan mode, task framing, verification before claiming done, permissions and hooks, subagents and parallel worktrees, MCP servers, headless runs in CI, context hygiene, and reviewing AI-written code. Use whenever setting up a repo for coding agents, writing or trimming CLAUDE.md, configuring Claude Code settings, hooks or permissions, planning how to split work across agent sessions, automating agent runs in CI, or when agent output quality is poor and the setup needs fixing.
 metadata:
   status: seed
-  version: 0.1.0
+  version: 0.2.0
   last-reviewed: 2026-10-23
   owners: []
   tags: [ai, agentic-coding, claude-code, workflow]
@@ -52,9 +52,10 @@ once per repo, then give each task a crisp goal.
    checks passing.
 4. **Verify before "done":** tests, lint, typecheck, and for UI, actually
    load the page. "It should work" isn't verification.
-5. **Review the diff** like a teammate's PR (`/code-review`, and
-   `/security-review` for sensitive areas). Watch for invented APIs, skipped
-   error handling, weakened tests and scope creep.
+5. **Review the diff** like a teammate's PR with the `code-quality`
+   checklist (`/code-review`, and `/security-review` for sensitive areas).
+   Watch for invented APIs, skipped error handling, weakened tests, scope
+   creep and the overengineering red flags in `design-principles`.
 6. **Retro:** if the agent hit a gotcha, record it (`skill-retro`) so the
    next session doesn't.
 
@@ -79,3 +80,5 @@ once per repo, then give each task a crisp goal.
 - Granting broad permissions (any shell command, prod credentials) to save
   a few approval clicks.
 - Accepting large unreviewed diffs because CI is green.
+- Agents overengineer by default (extra layers, options, defensive code).
+  Ask for the minimal change and check against `design-principles`.

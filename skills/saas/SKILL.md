@@ -3,7 +3,7 @@ name: saas
 description: Our blueprint for building multi-tenant B2B and B2C SaaS products, covering the tenancy model, organizations and roles, auth and SSO, billing and entitlements, onboarding, admin and support tooling, audit logs, notifications, observability, rate limits, data export and deletion, backups, and a launch checklist of what must exist on day one versus later. Use whenever starting a new SaaS product, adding multi-tenancy or teams and workspaces to an app, planning a SaaS MVP, reviewing a SaaS architecture, or preparing a SaaS launch.
 metadata:
   status: seed
-  version: 0.1.0
+  version: 0.2.0
   last-reviewed: 2026-10-23
   owners: []
   tags: [saas, architecture, product]
@@ -75,5 +75,6 @@ organizations; the active org is explicit in every request.
 ## Next steps
 
 Shape the product with `brainstorm` → `feature-feasibility` → pick the stack
-with `tech-stack-chooser` → estimate with `cloud-cost-planning` → build with
-`spec-driven-development`.
+with `tech-stack-chooser` → design with `system-design` → estimate with
+`cloud-cost-planning` → build with `spec-driven-development` → launch with
+`marketing`.

@@ -28,7 +28,7 @@ Set in each skill's frontmatter under `metadata.status`.
 |--------------|----------------------------------------------------------------|-----------------|
 | `seed`       | Idea captured, outline only. May be wrong.                     | Has a name, a description and the problem it solves. |
 | `draft`      | Usable, tried on at least one real task.                       | Steps written, one real use recorded in `LEARNINGS.md`. |
-| `stable`     | Trusted default across projects.                               | Used on 3+ tasks in 2+ projects, no open "wrong advice" learnings, sources cited for external facts. |
+| `stable`     | Trusted default across projects.                               | Used on 3+ tasks in 2+ projects, no open "wrong advice" learnings, sources cited for external facts; ideally a passing eval suite with a positive with-vs-without delta (`skill-evals`). |
 | `deprecated` | Superseded or no longer true. Kept so links don't break.       | `metadata.replaced-by` names the successor (or says why it's gone). |
 
 ## Learnings → skill body

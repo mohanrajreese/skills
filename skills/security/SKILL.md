@@ -3,7 +3,7 @@ name: security
 description: How we keep apps secure across our stack, covering lightweight threat modeling, the OWASP Top 10 2025 and the OWASP GenAI LLM Top 10 2026 as review checklists, secrets handling, dependency and supply-chain hygiene, authorization, security headers, logging, incident basics, and India DPDP Act and GDPR data duties. Use whenever reviewing code or a design for security, handling personal or payment data, adding auth or file uploads or webhooks or AI features, preparing a release or security questionnaire, responding to a vulnerability or leaked secret, or setting up scanning in CI.
 metadata:
   status: seed
-  version: 0.1.0
+  version: 0.2.0
   last-reviewed: 2026-10-23
   owners: []
   tags: [security, compliance, review]
@@ -73,6 +73,10 @@ without validation (see `ai-agents`).
 - **Backups** tested by restoring.
 
 ## Data protection (India DPDP, GDPR)
+
+Go deeper with `data-security` (data lifecycle controls) and
+`india-it-compliance` (IT Act, CERT-In, intermediary rules).
+
 
 - Collect the minimum; record purpose and consent; support access,
   correction and deletion requests; keep a breach-notification runbook.
