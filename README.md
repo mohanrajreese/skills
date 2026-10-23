@@ -42,6 +42,21 @@ work, a verify loop of real commands, the rules that matter, and a dated
 Version facts go stale. `skill-gardener` flags skills not reviewed in 90
 days, and `skill-research` refreshes them from primary sources.
 
+## Product, platform and AI skills
+
+| Area | Skills |
+|---|---|
+| Plan | `brainstorm`, `feature-feasibility`, `ai-feasibility`, `tech-stack-chooser`, `cloud-cost-planning` |
+| Build | `spec-driven-development` (spec → plan → tasks, templates included), `saas`, `figma` |
+| Integrations | `razorpay`, `whatsapp-integration`, `sso` |
+| Money | `pricing`, `subscription-billing` |
+| Security | `security` (OWASP Top 10:2025, OWASP GenAI LLM Top 10 2026, DPDP) |
+| AI | `ai-agents`, `agentic-coding`, `subagent-suggester` |
+
+[`docs/idea-to-ship.md`](docs/idea-to-ship.md) shows how they chain from an
+idea to a shipped feature. Evidence lives in
+[`research/2026-10-23-product-platform-baseline.md`](research/2026-10-23-product-platform-baseline.md).
+
 ## Use the skills in a project
 
 **Claude Code (plugin marketplace)**, once per machine:
