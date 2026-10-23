@@ -2,7 +2,8 @@
 """Tooling for the dev-skills library.
 
 Commands:
-  validate          Check every skills/*/SKILL.md against the library rules.
+  validate          Check every skills/*/SKILL.md against the library rules,
+                    and that docs/skills-guide.md has an entry for each skill.
   index             Regenerate SKILLS.md from skill frontmatter.
   new NAME -d DESC  Scaffold skills/NAME/ from templates/skill/.
   report            Show status, review age and open learnings per skill.
@@ -25,6 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SKILLS_DIR = ROOT / "skills"
 TEMPLATE_DIR = ROOT / "templates" / "skill"
 INDEX_FILE = ROOT / "SKILLS.md"
+GUIDE_FILE = ROOT / "docs" / "skills-guide.md"
 
 ALLOWED_KEYS = {"name", "description", "license", "allowed-tools", "metadata", "compatibility"}
 STATUSES = ("seed", "draft", "stable", "deprecated")
@@ -134,8 +136,14 @@ def cmd_validate(_args):
                 print(f"  - {e}")
         else:
             print(f"ok   {d.name}")
+    if GUIDE_FILE.exists():
+        guide = GUIDE_FILE.read_text()
+        missing = [d.name for d in skill_dirs() if f"`{d.name}`" not in guide]
+        if missing:
+            failed += 1
+            print(f"FAIL {GUIDE_FILE.relative_to(ROOT)} has no entry for: {', '.join(missing)}")
     if failed:
-        sys.exit(f"{failed} skill(s) failed validation")
+        sys.exit(f"{failed} check(s) failed validation")
 
 
 def cmd_index(_args):

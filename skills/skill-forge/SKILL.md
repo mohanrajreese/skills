@@ -3,7 +3,7 @@ name: skill-forge
 description: Create a new skill in the shared dev-skills library from an idea, a workflow just completed, or a repeated set of instructions. Use whenever someone says "make this a skill", "we keep doing this", "save this workflow", "add a skill for X", or when the same multi-step procedure has been explained more than once across sessions, even if they never say the word skill.
 metadata:
   status: seed
-  version: 0.1.0
+  version: 0.2.0
   last-reviewed: 2026-10-23
   owners: []
   tags: [meta, authoring]
@@ -51,12 +51,15 @@ meta-skills can research, learn into and maintain it later.
    workflow came from (project, task) and kind `idea` or `worked`.
 7. **Set status honestly.** `seed` if it's an outline, `draft` if it was used
    on a real task. Never start at `stable` (see `docs/skill-lifecycle.md`).
-8. **Validate and index:**
+8. **Explain it** in `docs/skills-guide.md` under the right section: what it
+   does, when it kicks in, what you get, an example prompt. `validate` fails
+   without this entry.
+9. **Validate and index:**
    ```bash
    python3 scripts/skills.py validate
    python3 scripts/skills.py index
    ```
-9. If the idea came from `BACKLOG.md`, remove it from there.
+10. If the idea came from `BACKLOG.md`, remove it from there.
 
 ## Pitfalls
 

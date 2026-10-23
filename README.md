@@ -48,6 +48,7 @@ days, and `skill-research` refreshes them from primary sources.
 |---|---|
 | Plan | `brainstorm`, `feature-feasibility`, `ai-feasibility`, `tech-stack-chooser`, `cloud-cost-planning` |
 | Build | `spec-driven-development` (spec → plan → tasks, templates included), `saas`, `figma` |
+| Engineering | `design-principles` (KISS, YAGNI, DRY, SOLID, overengineering prevention), `coding-standards`, `code-quality` |
 | Integrations | `razorpay`, `whatsapp-integration`, `sso` |
 | Money | `pricing`, `subscription-billing` |
 | Security | `security` (OWASP Top 10:2025, OWASP GenAI LLM Top 10 2026, DPDP) |

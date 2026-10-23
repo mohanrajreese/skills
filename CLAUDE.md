@@ -31,3 +31,5 @@ python3 scripts/skills.py report
 - `LEARNINGS.md` is append-only, newest entry first; mark entries
   `→ promoted (date)` / `→ rejected (date): reason` instead of deleting.
 - `SKILLS.md` is generated; never edit it by hand.
+- Every skill has a hand-written entry in `docs/skills-guide.md`
+  (`validate` checks this).

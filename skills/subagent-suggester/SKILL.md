@@ -3,7 +3,7 @@ name: subagent-suggester
 description: Analyze a repository and its recurring tasks, then suggest and write Claude Code subagents (.claude/agents/*.md) that are actually worth having, such as a read-only code reviewer, test runner, migration reviewer, security auditor or docs researcher, each with a sharp description, minimal tools and the right model. Use whenever someone asks which subagents or agents to create, wants to set up a team of agents for a project, asks how to parallelise work with agents, or wants to review, trim or fix existing subagent definitions.
 metadata:
   status: seed
-  version: 0.1.0
+  version: 0.2.0
   last-reviewed: 2026-10-23
   owners: []
   tags: [ai, claude-code, subagents, agentic-coding]
@@ -75,7 +75,7 @@ risk, safer alternative, verdict (safe / needs change). Do not edit files.
 
 | Agent | Job | Tools | Model |
 |---|---|---|---|
-| `code-reviewer` | Review a diff for bugs, missing tests, convention breaks | read-only | opus/inherit |
+| `code-reviewer` | Review a diff with the `code-quality` checklist and `design-principles` red flags | read-only | opus/inherit |
 | `test-runner` | Run the suite, triage failures, propose minimal fixes | Read, Grep, Glob, Bash | sonnet |
 | `migration-reviewer` | Postgres/Django/Supabase migration safety | read-only + Bash | sonnet |
 | `security-auditor` | `security` checklist on auth, webhooks, uploads, AI features | read-only | opus/inherit |

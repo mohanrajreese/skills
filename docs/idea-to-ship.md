@@ -20,6 +20,7 @@ brainstorm ──► feature-feasibility ──► tech-stack-chooser ──► 
 | Know what it costs to run | `cloud-cost-planning` | Three-scenario cost model, unit costs |
 | Know what to charge | `pricing` → `subscription-billing` | Pricing proposal → billing implementation |
 | Build it | `spec-driven-development` | `specs/NNN-feature/{spec,plan,tasks}.md`, code, tests |
+| Build it well | `design-principles` (plan), `coding-standards` (write), `code-quality` (review) | Simple design, consistent code, a merge-ready diff |
 | Platform foundations | `saas`, `sso`, `security` | Tenancy, auth, security baseline |
 | Integrations | `razorpay`, `whatsapp-integration`, `shopify`, `figma` | Working, verified integrations |
 | AI features | `ai-agents`, `agentic-coding`, `subagent-suggester` | Agents/features with guardrails; agent-ready repo |

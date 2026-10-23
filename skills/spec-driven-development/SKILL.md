@@ -3,7 +3,7 @@ name: spec-driven-development
 description: Our spec-driven and skill-driven development workflow (SDD) for building features with AI coding agents, going from constitution to spec, clarify, plan, tasks, implement, verify and retro, with the matching skills loaded at each phase and learnings fed back into the library. Ships spec, plan and tasks templates and maps to GitHub Spec Kit and Kiro. Use whenever starting a non-trivial feature, turning an idea or ticket into a spec, asking an agent to build something bigger than a quick fix, writing acceptance criteria, breaking work into tasks, or when someone mentions SDD, spec-driven, skill-driven, Spec Kit or specs.
 metadata:
   status: seed
-  version: 0.1.0
+  version: 0.2.0
   last-reviewed: 2026-10-23
   owners: []
   tags: [workflow, specs, agentic-coding, planning]
@@ -38,10 +38,10 @@ Templates: `assets/spec-template.md`, `assets/plan-template.md`,
 | 0. Constitution (once) | Principles: quality bar, testing, security, UX, "we use our stack" | `project-onboarding`, `agentic-coding` | Team agrees |
 | 1. Specify | `spec.md`: problem, users, stories, **acceptance criteria**, non-goals | `brainstorm`, `feature-feasibility`, `ai-feasibility`, `pricing` if monetised | No implementation details; every story testable |
 | 2. Clarify | Open questions answered or recorded as assumptions | — | No `[NEEDS CLARIFICATION]` left that blocks the plan |
-| 3. Plan | `plan.md`: architecture, data model, API contracts, migrations, security and cost notes, test strategy | `tech-stack-chooser`, stack skills, `security`, `cloud-cost-planning`, `saas`, integration skills | Plan respects the constitution; risks have mitigations |
+| 3. Plan | `plan.md`: architecture, data model, API contracts, migrations, security and cost notes, test strategy | `tech-stack-chooser`, stack skills, `design-principles`, `security`, `cloud-cost-planning`, `saas`, integration skills | Plan respects the constitution; simplest design that meets the spec (no overengineering red flags); risks have mitigations |
 | 4. Tasks | `tasks.md`: small tasks (T001…), dependencies, `[P]` for parallel, each with its check | `subagent-suggester` for parallel work | Every acceptance criterion maps to ≥1 task |
-| 5. Implement | Code + tests, task by task | stack skills, `figma` for UI | Each task's check passes before the next |
-| 6. Verify | Acceptance criteria demonstrated (tests, screenshots, demo) | `security`, `/code-review` | All criteria pass; no unplanned scope |
+| 5. Implement | Code + tests, task by task | stack skills, `coding-standards`, `figma` for UI | Each task's check passes before the next |
+| 6. Verify | Acceptance criteria demonstrated (tests, screenshots, demo) | `code-quality`, `security`, `/code-review` | All criteria pass; no unplanned scope |
 | 7. Retro | Learnings logged; specs updated to match what shipped | `skill-retro` | Library improved |
 
 ## Writing good specs
